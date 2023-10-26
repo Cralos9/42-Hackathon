@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logo.svg">
+  <link rel="icon" type="image/png" href="../assets/img/logo.svg">
+  <title>
+    SoGrape Wine Scraping
+  </title>
+  <!-- Fonts and icons -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet">
+</head>
+
+<body class="">
+  <div class="wrapper">
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav ml-auto">
+              <li class="dropdown nav-item">
+                <a href="javascript:void(0)" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                  <div class="notification d-none d-lg-block d-xl-block"></div>
+                  <i class="far fa-bell"></i>
+                  <p class="d-lg-none">
+                    Notifications
+                  </p>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right dropdown-navbar">
+                  <li class="nav-link"><a href="#" class="nav-item dropdown-item">Trinca Bolotas Promo Continente</a></li>
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Mateus Rose S/Stock Continente</a></li>
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Continente Status: Off</a></li>
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Mateus Rose Restocked Continente</a></li>
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Price Reduced Mateus Rose El Corte Ingles</a></li>
+                </ul>
+              </li>
+              <li class="dropdown nav-item">
+                <a href="#" class a="dropdown-toggle nav-link" data-toggle="dropdown">
+                  <div class="photo">
+                    <img src="../assets/img/ceo.jpeg" alt="Profile Photo">
+                  </div>
+                  <b class="caret d-none d-lg-block d-xl-block"></b>
+                  <p class="d-lg-none">
+                    Log out
+                  </p>
+                </a>
+                <ul class="dropdown-menu dropdown-navbar">
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Profile</a></li>
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a></li>
+                  <li class="dropdown-divider"></li>
+                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a></li>
+                </ul>
+              </li>
+              <li class="separator d-lg-none"></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="content" style="padding: 80px;">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Wine Prices</h4>
+				<button id="refreshButton" class="btn btn-primary">Refresh Data</button>
+				<button id="runPythonButton" class="btn btn-primary disabled">WebScrapper</button>
+				<button class="btn btn-primary disabled">Add Product</button>
+				<button class="btn btn-primary disabled">Add Store</button>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table tablesorter" id="wineTable">
+                    <thead class="text-primary">
+						<tr>
+						  <th data-sort="store">Store</th>
+						  <th data-sort="name">Name</th>
+						  <th data-sort="price">Price</th>
+						  <th data-sort="currency">Currency</th>
+						  <th data-sort="date">Date</th>
+						  <th data-sort="location">Location</th>
+						  <th data-sort="EAN">EAN</th>
+						</tr>
+					  </thead>
+                    <tbody>
+                      <!-- Add your table data here -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container-fluid">
+          <ul class="nav" style="float: right; padding-right: 50px;">
+            <li class="nav-item">
+				<a href="#" class="nav-link">
+                Team 4
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://www.42porto.com/en/" target="_blank" rel="noopener noreferrer" class="nav-link">
+                42 Porto
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://sogrape.com/" target="_blank" rel="noopener noreferrer" class="nav-link">
+                SoGrape
+              </a>
+            </li>
+			<li class="nav-item">
+              <a href="" class="nav-link">
+                Version 0.2.8 (Alpha Version)
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </div>
+<!-- Core JS Files -->
+<script src="../assets/js/core/jquery.min.js"></script>
+<script src="../assets/js/core/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script>
+	$(document).ready(function() {
+	  var table = $('#wineTable').DataTable({
+		language: {
+		  search: "", // Remove the default "Search:" label
+		},
+		searching: false, // Remove the search bar
+		ordering: true,   // Show order buttons
+		pageLength: 25,   // Set the default page length to 25 entries,
+		data: [],         // Initialize with an empty array
+		columns: [
+		  { data: "store" },
+		  { data: "name" },
+		  { data: "price" },
+		  { data: "currency" },
+		  { data: "date" },
+		  { data: "location" },
+		  { data: "EAN" }
+		],
+	  });
+
+	  // Function to refresh the JSON data and update the table
+	  function refreshData() {
+		fetch('product_data.json')
+		  .then(response => response.json())
+		  .then(data => {
+			table.clear().rows.add(data).draw();
+		  })
+		  .catch(error => console.error('Error loading JSON:', error));
+	  }
+
+	  // Initial data load
+	  refreshData();
+
+	  // Add a click event handler for the "Refresh Data" button
+	  $('#refreshButton').click(function() {
+		refreshData();
+	  });
+});
+
+
+</script>
+</body>
+</html>

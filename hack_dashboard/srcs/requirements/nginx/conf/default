@@ -1,0 +1,26 @@
+server {
+  # Example PHP Nginx FPM config file
+  listen 80 default_server;
+  listen [::]:80 default_server;
+  root /var/www/html;
+
+  # Add index.php to setup Nginx, PHP & PHP-FPM config
+  index index.php index.html index.htm index.nginx-debian.html;
+
+  server_name _;
+
+  location / {
+    try_files $uri $uri/ =404;
+  }
+
+  # pass PHP scripts on Nginx to FastCGI (PHP-FPM) server
+  location ~ \.php$ {
+    include snippets/fastcgi-php.conf;
+    
+    # Using PHP-FPM with a Unix socket
+    fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+
+    # Using a TCP connection:
+    # fastcgi_pass 127.0.0.1:9000;
+  }
+}

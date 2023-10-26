@@ -1,0 +1,110 @@
+[
+    {
+        "store": "El Corte Ingles",
+        "name": "Mateus Vinho Ros\u00e9 garrafa 75 cl",
+        "price": "4,49 \u20ac",
+        "currency": "EUR",
+        "date": "2023-10-25",
+        "location": "Portugal",
+        "EAN": "5601012011500"
+    },
+    {
+        "store": "El Corte Ingles",
+        "name": "Mateus Espumante Sparkling Ros\u00e9 Bruto garrafa 75 cl",
+        "price": "6,99 \u20ac",
+        "currency": "EUR",
+        "date": "2023-10-25",
+        "location": "Portugal",
+        "EAN": "5601012001310"
+    },
+    {
+        "store": "El Corte Ingles",
+        "name": "Trinca Bolotas Vinho Tinto Regional do Alentejo garrafa 75 cl",
+        "price": "6,99 \u20ac",
+        "currency": "EUR",
+        "date": "2023-10-25",
+        "location": "Portugal",
+        "EAN": "5601012004427"
+    },
+    {
+        "store": "El Corte Ingles",
+        "name": "Papa Figos Vinho Branco do Douro garrafa 75 cl",
+        "price": "7,99 \u20ac",
+        "currency": "EUR",
+        "date": "2023-10-25",
+        "location": "Portugal",
+        "EAN": "5601012011920"
+    },
+    {
+        "store": "Garrafeira Soares",
+        "name": "Vinho Ros\u00e9 Mateus 75 Cl",
+        "price": "3,59 \u20ac",
+        "currency": "EUR",
+        "date": "2023-10-25",
+        "location": "Portugal",
+        "EAN": "5601012011500"
+    },
+    {
+        "store": "Garrafeira Soares",
+        "name": "Espumante Mateus Ros\u00e9 75 Cl",
+        "price": "6,69 \u20ac",
+        "currency": "EUR",
+        "date": "2023-10-25",
+        "location": "Portugal",
+        "EAN": "5601012001310"
+    },
+    {
+        "store": "Garrafeira Soares",
+        "name": "Vinho Tinto Trinca Bolotas 75 Cl",
+        "price": "6,19 \u20ac",
+        "currency": "EUR",
+        "date": "2023-10-25",
+        "location": "Portugal",
+        "EAN": "5601012004427"
+    },
+    {
+        "store": "Garrafeira Soares",
+        "name": "Vinho Branco Douro Papa Figos 75 Cl",
+        "price": "7,29 \u20ac",
+        "currency": "EUR",
+        "date": "2023-10-25",
+        "location": "Portugal",
+        "EAN": "5601012011920"
+    },
+    {
+        "store": "Continente",
+        "name": "No information for 5601012011500",
+        "price": "No information for 5601012011500",
+        "currency": "EUR",
+        "date": "2023-10-25",
+        "location": "Portugal",
+        "EAN": "5601012011500"
+    },
+    {
+        "store": "Continente",
+        "name": "No information for 5601012001310",
+        "price": "No information for 5601012001310",
+        "currency": "EUR",
+        "date": "2023-10-25",
+        "location": "Portugal",
+        "EAN": "5601012001310"
+    },
+    {
+        "store": "Continente",
+        "name": "No information for 5601012004427",
+        "price": "No information for 5601012004427",
+        "currency": "EUR",
+        "date": "2023-10-25",
+        "location": "Portugal",
+        "EAN": "5601012004427"
+    },
+    {
+        "store": "Continente",
+        "name": "No information for 5601012011920",
+        "price": "No information for 5601012011920",
+        "currency": "EUR",
+        "date": "2023-10-25",
+        "location": "Portugal",
+        "EAN": "5601012011920"
+    }
+]

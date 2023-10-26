@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  nginx:
+    build:
+      context: requirements/nginx
+    container_name: nginx
+    env_file: .env
+    networks:
+      - wineApp
+    ports:
+      - "80:80"
+    volumes:
+      - ./requirements/nginx/www:/var/www/
+    restart: on-failure
+  mongodb:
+    image: mongodb/mongodb-community-server:6.0-ubi8
+    container_name: mongodb
+    env_file: .env
+    networks:
+      - wineApp
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb:/data/db
+      - ./requirements/mongodb/scripts:/var/tmp
+    healthcheck:
+      test: mongosh localhost:27017/wineApp --quiet --eval 'db.runCommand("ping").ok'
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+    command: ["/bin/sh", "/var/tmp/setup.sh"]
+    restart: unless-stopped
+volumes:
+  mongodb:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: "/var/lib/mongodb_data"
+networks:
+  wineApp:
+    driver: bridge
